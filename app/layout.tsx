@@ -1,6 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Fredoka } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
+import { I18nProvider } from "@/lib/i18n/context"
 import "./globals.css"
 
 const inter = Inter({
@@ -27,8 +29,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${fredoka.variable} antialiased`}>
-      <body>{children}</body>
+    <html lang="es" className={`${inter.variable} ${fredoka.variable} antialiased`} suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <I18nProvider>{children}</I18nProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
