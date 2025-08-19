@@ -1,6 +1,6 @@
 "use client"
 
-import { createClient, isSupabaseConfigured } from "@/lib/supabase/server"
+import { createClient, isSupabaseConfigured } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
