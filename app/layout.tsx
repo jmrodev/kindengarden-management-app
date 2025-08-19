@@ -29,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${fredoka.variable} antialiased`}>
-      <body suppressHydrationWarning>
+    <html lang="es" className={`${inter.variable} ${fredoka.variable} antialiased`} suppressHydrationWarning>
+      <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true} storageKey="garden-theme">
           <I18nProvider>{children}</I18nProvider>
         </ThemeProvider>
